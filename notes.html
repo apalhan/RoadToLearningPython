@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mini Notion</title>
+  <link rel="stylesheet" href="style1.css" />
+</head>
+<body>
+  <div class="notion-container">
+    <h1>Mini Notion</h1>
+
+    <div class="note-input">
+      <select id="blockType">
+        <option value="text">Text</option>
+        <option value="heading">Heading</option>
+        <option value="todo">To-do</option>
+        <option value="quote">Quote</option>
+        <option value="embed">Embed (Website/PDF)</option> <!-- NEW: embed option -->
+      </select>
+
+      <textarea id="noteInput" placeholder="Type your note..." rows="1"></textarea>
+    </div>
+
+    <!-- Hidden file input for images -->
+    <input 
+      type="file" 
+      id="imageUpload" 
+      accept="image/*" 
+      style="display:none;" 
+      onchange="uploadImage(event)"
+    />
+
+    <div class="sort-container">
+      <button onclick="sortNotes('newest')">Sort by Newest</button>
+      <button onclick="sortNotes('oldest')">Sort by Oldest</button>
+      <button onclick="sortNotes('alphabetical')">A–Z</button>
+    </div>
+
+    <div id="notesList" class="note-list"></div>
+  </div>
+
+  <!-- Libraries -->
+  <script src="sortable.js"></script>
+  <script src="script1.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+:root {
+  --bg: #f7f6f3;
+  --text: #333;
+  --accent: #e2e0dc;
+  --border: #d1d1d1;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg);
+  margin: 0;
+  padding: 2rem;
+  color: var(--text);
+}
+
+.notion-container {
+  max-width: 700px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.note-input {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Textarea and select styling */
+.note-input textarea,
+.note-input select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+/* Special behavior for auto-expanding textarea */
+#noteInput {
+  width: 100%;
+  resize: none;
+  overflow: hidden;
+  min-height: 42px;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  box-sizing: border-box;
+  transition: height 0.2s ease;
+  flex: 1 1 300px;
+
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}  
+
+.note-input button {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.note-block {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.note-content {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.note-content[contenteditable="true"] {
+  outline: none;
+}
+
+.note-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.note-toolbar button {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.note-toolbar button:hover {
+  color: #111;
+}
+
+.todo-checkbox {
+  margin-right: 10px;
+}
+
+.heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.quote {
+  font-style: italic;
+  border-left: 4px solid #ccc;
+  padding-left: 10px;
+}
+
+.embedded-image {
+max-width: 100%;
+display: block;
+margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+.note-input {
+    flex-direction: column;
+}
+}
